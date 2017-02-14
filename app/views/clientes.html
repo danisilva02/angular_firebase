@@ -1,0 +1,41 @@
+<div class="section">
+    <div class="container">
+        
+        <h1>Clientes cadastrodo no sistema</h1><div class="btn btn-primary" ng-click="vm.ativaModalNovoCliente()">Adicionar produto</div>
+        <hr>
+        
+        <table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Ativo</th>
+      <th>Data cadastro</th>
+      <th>Valor devedor</th>
+      <th>Valor caixa</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="clientesItem in clientes">
+      <td>{{clientesItem.id}}</td>
+      <td>{{clientesItem.nome}}</td>
+      <td>{{clientesItem.sobreNome}}</td>
+      <td>{{clientesItem.status}}</td>
+      <td>{{clientesItem.dataCadastro}}</td>
+      <td>{{clientesItem.valorDevedor}}</td>
+      <td>{{clientesItem.valorCaixa}}</td>
+      <td><i class="fa fa-trash-o editIcon" aria-hidden="true"></i> <i class="fa fa-pencil-square-o trashIcon" aria-hidden="true"></i> </td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+    
+    <div class="adicionarNovoProduto" ng-show="ativaModalNovoCliente">
+    
+    <div ng-include="'app/includes/formCadastroClientes.html'"></div>
+    
+</div>
+    
+</div>

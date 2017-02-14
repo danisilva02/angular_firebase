@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="pt-br" ng-app="app">
+ 
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Cache-Control: max-age=3600, must-revalidate"/>
+    <meta name="description" content="Firengram">
+    <title>Controle - estoque</title>
+
+    <!-- Favicon 
+    <link rel="shortcut icon" href="assets/images/favicon.ico"/>-->
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="196x196" href="https://5517.firebaseapp.com/assets/images/icon-touch.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <link rel="apple-touch-icon" href="https://5517.firebaseapp.com/assets/images/icon-touch.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="compartilha">
+
+    <link rel="stylesheet" href="bower_components/bootswatch/lumen/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="bower_components/ng-img-crop/compile/minified/ng-img-crop.css"/>   
+    
+    <link rel="stylesheet" href="app/css/estilo.css"/>
+
+</head>
+
+<body>
+<!--topo-->
+<div ng-include="'app/includes/topo.html'" ng-show="user"></div>
+<!--Fim topo-->
+
+
+<div ng-view></div>
+    
+<!-- js --> 
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="bower_components/firebase/firebase.js"></script>
+<script src="bower_components/ng-img-crop/compile/minified/ng-img-crop.js"></script>
+<script src="app/main.js"></script>
+<script src="app/configs/run.js"></script>
+<script src="app/configs/config.js"></script>
+<script src="app/services/services.js"></script>
+<script src="app/controller/loginControler.js"></script>
+<script src="app/controller/homeControler.js"></script>
+<script src="app/controller/produtosControler.js"></script>
+<script src="app/controller/cardapioControler.js"></script>
+<script src="app/controller/clientesControler.js"></script>
+<script src="app/controller/usuariosappControler.js"></script>
+<script src="app/routes/rota.js"></script>
+
+
+
+<!-- fim js -->     
+
+
+</body>
+</html>

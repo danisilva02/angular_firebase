@@ -1,0 +1,66 @@
+.fa{
+  
+  font-size: 150px;  
+    
+}
+.panel-body{
+    
+    text-align:center;
+}
+#myTabContent{
+  
+  margin-top:80px;
+}
+.adicionarNovoProduto{
+  
+    width: 100%;
+    height: auto;
+    background-color: rgba(0,0,0,.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding-bottom: 30px;
+  
+}
+
+.formProduto{
+  
+    background: white;
+    padding: 100px;
+    margin-top: 40px;
+    border-radius: 10px;
+  
+}
+.editIcon{
+  font-size:30px !important;
+}
+.trashIcon{
+  font-size:30px !important;
+}
+.modal{
+  
+  display:block !important;
+}
+.btn {
+    padding: 5px 6px 3px !important;
+    border-width: 0 1px 4px 1px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.fa-trash-o{
+  transiton:all 500ms ease;
+  cursor:pointer;
+  
+}
+.fa-trash-o:hover{
+  
+  color:red;
+  
+}
+.img-responsive, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: inline-block !important;
+    max-width: 100%;
+    height: auto;
+}

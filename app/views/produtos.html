@@ -1,0 +1,42 @@
+<div class="section">
+    <div class="container">
+        
+      
+        
+<ul class="nav nav-tabs">
+  <li class=""><a href="#bebidas" target="_self" data-toggle="tab" aria-expanded="false">Bebibas</a></li>
+  <li class=""><a href="#lanches" target="_self" data-toggle="tab" aria-expanded="false">Lanches</a></li>
+  <li class=""><a href="#Sobremesas" target="_self" data-toggle="tab" aria-expanded="false">Sobremesas</a></li>
+  <li class=""><a href="#frutas" target="_self" data-toggle="tab" aria-expanded="false">Frutas</a></li>
+</ul>
+<div class="btn btn-primary" style="margin-top:10px;" ng-click="vm.adicionarProduto('novaCategoria')">Adicionar nova categoria</div>
+<br>
+<br>
+<div class="btn btn-warning" ng-click="vm.modoCardETabelaAtiva()">{{tituloCT}}</div>
+<div class="btn btn-primary" style="margin-top:10px;float:right;" ng-click="vm.adicionarProduto('novaicone')">Adicionar novo icone</div>
+
+
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade" id="bebidas">
+        <div ng-include="'app/includes/bebidas.html'"></div>
+  </div>
+  <div class="tab-pane fade active in" id="lanches">
+        <div ng-include="'app/includes/lanches.html'"></div>
+  </div>
+  <div class="tab-pane fade" id="Sobremesas">
+        <div ng-include="'app/includes/sobremesas.html'"></div>
+  </div>
+  <div class="tab-pane fade" id="frutas">
+        <div ng-include="'app/includes/frutas.html'"></div>
+  </div>
+  
+</div>
+
+    </div>
+</div>
+
+<div class="adicionarNovoProduto" ng-show="ativaModalNovoProduto">
+    
+    <div ng-include="'app/includes/formCadastroProduto.html'"></div>
+    
+</div>

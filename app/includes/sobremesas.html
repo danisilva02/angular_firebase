@@ -1,0 +1,119 @@
+<div class="section">
+    <div class="container">
+        
+        <h1>Sobremesas</h1><div class="btn btn-primary" ng-click="vm.adicionarProduto('sobremesas')">Adicionar produto</div>
+        <br>
+        <br>
+        <div class="form-group">
+          <label class="control-label" for="inputDefault">Digite o produto que esta procurando</label>
+          <input type="text" class="form-control" id="inputDefault">
+        </div>
+        <br>
+        <hr>
+        
+        <div class="col-md-3" ng-repeat="item in produtosSobremesaItem" ng-show="modoCardBebidas">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{item.titulo}}</div>
+                <div class="panel-body">
+                    
+                    <img ng-src="{{ item.icone.Img }}" alt="{{ item.icone.name }}" class="img-responsive" width="150px" />
+                </div>
+                <div class="panel-footer">
+                    
+                    <p>
+                        <p>descrição: {{item.desc}}</p>
+                        <p>Id: {{item.id}}</p>
+                        <p>Valor: {{item.preco}}</p>
+                        <p>Data de cadastro: {{item.data}}</p>
+                        <p>Quantidade: {{item.quant}}</p>
+                        <p>Status: {{item.ativo}}</p>
+                        <div class="btn btn-primary" ng-click="vm.editarProduto('sobremesas',item.titulo,item.id,item.quant,item.preco,item.data,item.ativo,item.desc)">Editar</div>
+                        <div class="btn btn-warning" ng-click="vm.saida('sobremesas',item.id,item.quant)">Saida</div>
+                        <button class="btn btn-success" ng-click="vm.entrada('sobremesas',item.id,item.quant)">Entrada</button>
+                        <br/>
+                    </p>
+                </div>
+            </div>
+         </div>
+        <table class="table table-striped table-hover" ng-show="modoTabelaBebidas">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Titulo</th>
+      <th>Descrição</th>
+      <th>Valor</th>
+      <th>Data</th>
+      <th>Quantidade</th>
+      <th>Status</th>
+      <th>Ações</th>
+      
+    </tr>
+  </thead>
+  <tbody ng-repeat="item in produtosSobremesaItem" ng-show="item.ativo != 'removido'">
+    <tr>
+      <td>{{item.id}}</td>
+      <td>{{item.titulo}}</td>
+      <td>{{item.desc}}</td>
+      <td>C{{item.preco}}</td>
+      <td>{{item.data}}</td>
+      <td>{{item.quant}}</td>
+      <td>{{item.ativo}}</td>
+      <td>
+        <div class="btn btn-primary" ng-click="vm.editarProduto('sobremesas',item.titulo,item.id,item.quant,item.preco,item.data,item.ativo,item.desc)">Editar</div>
+                        <div class="btn btn-warning" ng-click="vm.saida('sobremesas',item.id,item.quant)">Saida</div>
+                        <button class="btn btn-success" ng-click="vm.entrada('sobremesas',item.id,item.quant)">Entrada</button>
+        
+      </td>
+      
+    </tr>
+  </tbody>
+</table>
+        <div class="modal" id="modalSaida" ng-show="modalSaida">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="vm.closeModalSaida()">&times;</button>
+                <h4 class="modal-title">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                <label>Digite a quantidade da saida do produto</label>
+                <input type="text" class="form-control" placeholder="Exemplo: 2" ng-model="quant">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.closeModalSaida()">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="vm.comfirmaSaida(quant)">Save changes</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="modal" id="modalSaida" ng-show="modalentrada">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="vm.closeModalEntrada()">&times;</button>
+                    <h4 class="modal-title">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    <label>Digite a quantidade da saida do produto</label>
+                    <input type="text" class="form-control" placeholder="Exemplo: 2" ng-model="quant">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.closeModalEntrada()">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="vm.comfirmaEntrada(quant)">Save changes</button>
+                    
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+        <div class="adicionarNovoProduto" ng-show="editarProdutoHides">
+    
+        <div ng-include="'app/includes/formEditarProduto.html'"></div>
+    
+        </div>
+         
+    </div>
+</div>

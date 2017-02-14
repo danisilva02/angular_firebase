@@ -1,0 +1,109 @@
+<div class="section">
+    <div class="container">
+
+<form class="form-horizontal formProduto">
+  <fieldset>
+    <legend>Cadastrar novo produto</legend>
+    <div class="form-group">
+      <label for="titulo" class="col-lg-2 control-label">Titulo produto</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="titulo" placeholder="Titulo produto" ng-model="cadastroProduto.titulo">
+      </div>
+    </div>
+    <!--<div class="form-group">-->
+    <!--  <label for="inputPassword" class="col-lg-2 control-label">Password</label>-->
+    <!--  <div class="col-lg-10">-->
+    <!--    <input type="password" class="form-control" id="inputPassword" placeholder="Password">-->
+    <!--    <div class="checkbox">-->
+    <!--      <label>-->
+    <!--        <input type="checkbox"> Checkbox-->
+    <!--      </label>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</div>-->
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Descrição do produto</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="3" id="textArea" ng-model="cadastroProduto.textArea"></textarea>
+        <span class="help-block">Adicione uma descrição para o produto.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="status" class="col-lg-2 control-label">Ativo</label>
+      <div class="col-lg-10">
+        <div class="col-lg-10">
+        <select class="form-control" id="status" ng-model="cadastroProduto.status">
+          <option>sim</option>
+          <option>nao</option>
+        </select>
+        <br>
+      </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="preco" class="col-lg-2 control-label">Preço</label></label>
+      <div class="col-lg-10">
+        <div class="col-lg-10">
+        <input type="text" class="form-control" id="preco" ng-model="cadastroProduto.preco">
+        <br>
+      </div>
+      </div>
+    </div>
+    <!--<div class="form-group">-->
+    <!--  <label for="select" class="col-lg-2 control-label">Categoria</label>-->
+    <!--  <div class="col-lg-10">-->
+    <!--    <select class="form-control" id="select" ng-model="cadastroProduto.categoria">-->
+    <!--      <option>Sobremesa</option>-->
+    <!--      <option>Refregerantes</option>-->
+    <!--      <option>lanches</option>-->
+    <!--      <option>Saladas</option>-->
+    <!--    </select>-->
+    <!--    <br>-->
+    <!--  </div>-->
+    <!--</div>-->
+    <div class="form-group">
+      <label for="Quantidade" class="col-lg-2 control-label">Quantidade</label>
+      <div class="col-lg-10">
+        <input type="number" class="form-control" id="Quantidade" ng-model="cadastroProduto.quantidade">
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+        
+        <div class="col-md-2" ng-repeat="icones in IconesSelecionado">
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ icones.nome }}</div>
+                <div style="display:none">{{ icones.tipo }}</div>
+                <div class="panel-body">
+                    <!--<i class="fa fa-shopping-cart" aria-hidden="true"></i>-->
+                    <img ng-src="{{ icones.Img }}" class="img-responsive" width="90px"/>
+                </div>
+                <div class="panel-footer">
+                    <!--<img ng-src="{{ post.user.image }}" alt="{{ post.user.name }}" class="pull-right" width="48px" />-->
+                    <p>
+                        <!--<div class="btn btn-warning" ng-click="vm.saida('lanches',item.id,item.quant)">Saida</div>-->
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" ng-model="icone.name" value="{{icones.Img}}">
+                        <br/>
+                    </p>
+                </div>
+            </div>
+         </div>
+        <!--<div class="radio">-->
+        <!--  <label ng-repeat="icones in IconesBebidas">-->
+        <!--    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">-->
+        <!--    <img ng-src="{{ icones.Img }}" class="img-responsive" width="90px"/>-->
+        <!--    Icone-->
+        <!--  </label>-->
+        <!--</div>-->
+      
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancelar</button>
+        <button type="submit" class="btn btn-primary" ng-click="vm.cadastrarNovoProduto(icones.tipo)">Cadastrar</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div>
+</div>

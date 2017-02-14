@@ -1,0 +1,50 @@
+<div style="width:100%;height:40px;margin-bottom:100px;border-top:3px solid cyan;"></div>
+<div class="section">
+    
+    <div class="container">
+        
+        <div class="jumbotron">
+          <h1>Controle de estoque</h1>
+          <p>Faça o ligin.</p>
+          <input type="text" ng-model="email" placeholder="Digite seu login" class="form-control block">
+          <input type="password" ng-model="password" placeholder="Digite sua senha" class="form-control block">
+          <br>
+          <buttom class="btn btn-warning" ng-click="vm.recuperarSenhaModal()">Esqueci minha senha e login.</buttom>
+          <br>
+          <p><a class="btn btn-primary btn-block" style="margin-top:100px;" ng-click="vm.Login()">logar</a></p>
+        </div>
+        
+    </div>
+    
+    <div class="modal" id="modalSaida" ng-show="modalRecuparSenhaeLogin">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Recuperar senha e login.</h4>
+                  </div>
+                  <div class="modal-body">
+                    <label>Digite seu email cadastrado no sistema.</label>
+                    <input type="text" class="form-control" placeholder="Exemplo: fulanodetal@gmail.com" ng-model="emailRecuperar">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+                    <button type="button" class="btn btn-primary" ng-click="vm.comfirmaEmeail(emailRecuperar)">Enviar</button>
+                    
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+        <div class="alert alert-dismissible alert-success" ng-show="confirmado">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong></strong> email enviado com sucesso, verifique sua caixa de entrada para recuperar a senha e login! <a href="#" class="alert-link"></a>.
+        </div>
+        
+        <div class="alert alert-dismissible alert-danger" ng-show="naoExixteEmail">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>Ops!</strong> <a href="#" class="alert-link"> O email digitado não exite em nossa base de dados,</a> por favor digite um email valido.
+        </div>
+    
+</div>
+
